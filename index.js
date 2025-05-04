@@ -27,7 +27,10 @@ async function fund() {
 
     // contract that we are interacting with
     // ABI and Address
+
+    // using BrowseProvider according to ethereum v6
     const provider = new ethers.BrowserProvider(window.ethereum)  
+    // using await according to ethereum v6
     const signer = await provider.getSigner()
     const contract = new ethers.Contract(contractAddress,abi,signer)
     const transactionResponse = await contract.fund({
